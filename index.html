@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oniria</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#4B0082" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <style>
+    #welcome {
+      transition: opacity 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="welcome" class="fixed inset-0 flex items-center justify-center bg-black text-white text-4xl font-bold z-50">
+    Bienvenido a Oniria
+  </div>
+  <div class="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-black text-white p-6 flex flex-col items-center justify-center space-y-6">
+    <img src="icon-512.png" width="192">
+    <h1 class="text-4xl font-bold">El hada de los Sueños</h1>
+    <textarea id="dreamInput" placeholder="¿Qué soñaste hoy?"
+      class="w-full max-w-md p-4 rounded-xl text-black resize-none shadow-lg"></textarea>
+    <button onclick="interpretDream()"
+      class="bg-purple-600 hover:bg-purple-800 transition text-white py-2 px-6 rounded-full shadow-lg">
+      Interpretar Sueños
+    </button>
+    <p id="result" class="text-xl font-semibold"></p>
+
+    <div class="w-full max-w-md mt-6">
+      <h2 class="text-2xl font-bold mb-2">Estadísticas</h2>
+      <ul id="statsList" class="space-y-2 text-lg"></ul>
+    </div>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
